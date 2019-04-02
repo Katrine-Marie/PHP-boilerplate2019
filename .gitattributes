@@ -1,0 +1,1 @@
+*.php   text diff=php whitespace=tab-in-indent,tabwidth=2
