@@ -6,7 +6,7 @@
 
 	<title><?php echo SITENAME; ?></title>
 
-	<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+	<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/minified/style.css">
 </head>
 <body>
 	<div class="page-wrapper">
