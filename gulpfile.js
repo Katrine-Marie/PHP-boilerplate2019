@@ -21,7 +21,7 @@ gulp.task('sass', function(){
 
 // autoprefixer
 gulp.task('prefix', function(){
-  return gulp.src('public/css/styles.css')
+  return gulp.src('public/css/style.css')
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false
@@ -32,7 +32,7 @@ gulp.task('prefix', function(){
 
 // gulp-cssnano
 gulp.task('nano', ['prefix'], function() {
-  return gulp.src('public/css/styles.css')
+  return gulp.src('public/css/style.css')
     .pipe(cssnano())
     .pipe(gulp.dest('public/css/minified'))
     .pipe(livereload());
@@ -85,6 +85,6 @@ gulp.task('imagemin', function () {
 gulp.task('watch', ['sass'], function(){
   livereload.listen();
   gulp.watch(['source/scss/**/*.scss'], ['sass']);
-  gulp.watch(['public/css/styles.css'], ['nano']);
+  gulp.watch(['public/css/style.css'], ['nano']);
   gulp.watch(['source/js/*.js'], ['concat']);
 })

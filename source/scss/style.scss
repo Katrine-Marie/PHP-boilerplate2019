@@ -1,6 +1,4 @@
-$background-color: #fff;
+@import 'inc/vars';
 
-body {
-  background-color: $background-color;
-  hyphens:auto;
-}
+@import 'inc/reset';
+@import 'inc/base';
