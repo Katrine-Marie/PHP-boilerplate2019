@@ -25,12 +25,12 @@ class Database {
 		}
 	}
 
-
+	// Prepare statement with query
 	public function query($query) {
 		$this->stmt = $this->dbh->prepare($query);
 	}
 
-
+	// Bind values
 	public function bind($param, $value, $type = null) {
 		if (is_null ($type)) {
 			switch (true) {
@@ -50,29 +50,29 @@ class Database {
 		$this->stmt->bindValue($param, $value, $type);
 	}
 
-
+	// Execute the prepared statement
 	public function execute(){
 		return $this->stmt->execute();
 	}
 
-
+	// Get result set as array of objects
 	public function resultset(){
 		$this->execute();
 		return $this->stmt->fetchAll(PDO::FETCH_OBJ);
 	}
 
-
+	// Get single record as object
 	public function single(){
 		$this->execute();
 		return $this->stmt->fetch(PDO::FETCH_OBJ);
 	}
 
-
+	// Get record row count
 	public function rowCount(){
 		return $this->stmt->rowCount();
 	}
 
-	
+	// Returns the last inserted ID
 	public function lastInsertId(){
 		return $this->dbh->lastInsertId();
 	}
