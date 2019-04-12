@@ -1,5 +1,12 @@
 <?php
 
+/*
+  Pages is the default to show if nothing else is shown in the URL.
+
+  The comments below show how you could use data from a model in the controller -
+  the model is not provided by default, but can be created under /models and hooked up to the controller in the constructor.
+*/
+
 class Pages extends Controller {
 
 	public function __construct(){
