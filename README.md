@@ -23,4 +23,6 @@ The `/source` directory is where you will find some base styling in `.scss` file
 
 You use the `gulp watch` command, in order to automatically run the above mentioned tasks upon file changes in `*.scss` or `*.js` files the `/source` directory.
 
+You use the `gulp imagemin` command in order to minify image files placed in the `/public/images` directory.
+
 NOTE: This setup still uses Gulp 3.9.1 - update to version 4 pending.
