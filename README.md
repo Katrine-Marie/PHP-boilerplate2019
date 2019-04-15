@@ -15,7 +15,17 @@ The `/app` directory is where all the MVC logic goes.
 
 You edit the `/app/config/config.php` file, to use your own database authentication, site name and URL root.
 
+Controller files are created in the `/app/controllers`directory - remember that they are supposed to `extend` the base `Controller`class.
+Views for each controller can be created in the `/app/views` folder - preferrably by creating a folder with the same name as the controller.
 
+In order to use data from the database, you need to create a model, which you can do under `/app/models`.
+To create a link between a model and a controller, add the model to the controller's constructor, like f.i.:
+
+```
+public function __construct(){
+  $this->postModel = $this->model('Post');
+}
+```
 
 ### Gulp setup
 
