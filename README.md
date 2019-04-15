@@ -13,12 +13,57 @@ The `/public` directory contains the assets used for the project, such as CSS an
 
 The `/app` directory is where all the MVC logic goes.
 
+## Data setup
 You edit the `/app/config/config.php` file, to use your own database authentication, site name and URL root.
 
-Controller files are created in the `/app/controllers`directory - remember that they are supposed to `extend` the base `Controller`class.
-Views for each controller can be created in the `/app/views` folder - preferrably by creating a folder with the same name as the controller.
+## Controllers and Views
+Controller files are created in the `/app/controllers`directory - remember that they are supposed to `extend` the base `Controller`class, like so:
+
+```
+class Pages extends Controller { }
+```
+
+Each controller class must contain a public function named `index`. The content of this method is the index view for the URL matching your `domain/controller` pattern.
+
+If you need to match more URL's, like f.i. `domain/controller/id`, simply create another method, with the name of the URL param to match.
+
+Views for each controller method can be created in the `/app/views` folder - preferrably by creating a folder with the same name as the controller, and then creating a file for each url param that needs a separate view.
+
+When you have created the view templates, you can use them in the controller methods by calling `$this->view('controller-name/method-name');` 
+
+## Models
 
 In order to use data from the database, you need to create a model, which you can do under `/app/models`.
+
+A model file is a class that must contain a constructor instantiating the Database class, like so:
+
+```
+class User {
+    private $db;
+
+    public function __construct(){
+      $this->db = new Database;
+    }
+}
+```
+
+After this, you create as many functions as you need, to create, read, update or delete data. An example could be:
+
+```
+public function findUserByEmail($email){
+  $this->db->query("SELECT * FROM users WHERE email = :email");
+  $this->db->bind(':email', $email);
+
+  $row = $this->db->single();
+
+  if($this->db->rowCount() > 0){
+    return true;
+  } else {
+    return false;
+  }
+}
+```
+
 To create a link between a model and a controller, add the model to the controller's constructor, like f.i.:
 
 ```
@@ -26,6 +71,14 @@ public function __construct(){
   $this->postModel = $this->model('Post');
 }
 ```
+
+After that, if you wish to use the data in a certain view, you can do it within the public function creating the view, as such:
+
+```
+$data = $this->postModel->getPosts();
+```
+
+And when you call the view function, you can pass the data along as `$this->view('pages/index', $data);`
 
 ### Gulp setup
 
