@@ -1,7 +1,7 @@
 # PHP-boilerplate2019
-A PHP MVC framework - intended for use in my personal projects. 
+A PHP MVC framework - intended for use in my personal projects.
 
-Includes, beside the framework logic itself, 
+Includes, beside the framework logic itself,
 * a complete login system, and
 * a Gulp setup for SASS compilation, as well as concatenation and minification of JS files.
 
@@ -13,10 +13,10 @@ The `/public` directory contains the assets used for the project, such as CSS an
 
 The `/app` directory is where all the MVC logic goes.
 
-## Data setup
+### Data setup
 You edit the `/app/config/config.php` file, to use your own database authentication, site name and URL root.
 
-## Controllers and Views
+### Controllers and Views
 Controller files are created in the `/app/controllers`directory - remember that they are supposed to `extend` the base `Controller`class, like so:
 
 ```
@@ -29,9 +29,9 @@ If you need to match more URL's, like f.i. `domain/controller/id`, simply create
 
 Views for each controller method can be created in the `/app/views` folder - preferrably by creating a folder with the same name as the controller, and then creating a file for each url param that needs a separate view.
 
-When you have created the view templates, you can use them in the controller methods by calling `$this->view('controller-name/method-name');` 
+When you have created the view templates, you can use them in the controller methods by calling `$this->view('controller-name/method-name');`
 
-## Models
+### Models
 
 In order to use data from the database, you need to create a model, which you can do under `/app/models`.
 
@@ -80,7 +80,7 @@ $data = $this->postModel->getPosts();
 
 And when you call the view function, you can pass the data along as `$this->view('pages/index', $data);`
 
-### Gulp setup
+## Gulp setup
 
 The `/source` directory is where you will find some base styling in `.scss` files, to get started with. It is also where you can place your JS files, if you wish to have ES6+ code compiled by Babel, and/or minified and bundled.
 
