@@ -80,6 +80,10 @@ $data = $this->postModel->getPosts();
 
 And when you call the view function, you can pass the data along as `$this->view('pages/index', $data);`
 
+## Login system
+
+In order to use the login system as it is included by default, you will need a db table with the name `users`, and the fields `name`, `password` and `email`. If you wish to alter this and use different names and/or more fields, edit the `User` model in `/app/models/User.php`.
+
 ## Gulp setup
 
 The `/source` directory is where you will find some base styling in `.scss` files, to get started with. It is also where you can place your JS files, if you wish to have ES6+ code compiled by Babel, and/or minified and bundled.
