@@ -1,29 +1,20 @@
-/* Typography */
-$base-font-color: #232323;
-$link-color: #777777;
 
 /* COLORS */
-$colors: (
-  "black": #2a2a2a,
-  "white": #fff,
-  "grey-light": #ccc7c3,
-  "grey-dark": #2a2a2a,
-  "accent": #ffa600,
-  "off-white": #f3f3f3,
-  "sky-blue": #ccf2ff
- );
+$black: #2a2a2a;
+$white: #fff;
+$grey-light: #ccc7c3;
+$grey-dark: #2a2a2a;
+$accent: #ffa600;
+$off-white: #f3f3f3;
+$sky-blue: #ccf2ff;
 
 /* BREAKPOINTS */
-$breakpoints: (
-  "break-mobile": 290px,
-  "break-phablet": 480px,
-  "break-tablet": 768px,
-  "break-desktop": 1020px,
-  "break-wide": 1280px
-);
+$break-mobile: 290px;
+$break-phablet: 480px;
+$break-tablet: 768px;
+$break-desktop: 1020px;
+$break-wide: 1280px;
 
 /* TYPOGRAPHY */
-$font-stack: (
-  decorative: #{'oswald', Helvetica, sans-serif},
-  general: #{'Helvetica Neue', Helvetica, Arial, sans-serif}
-);
+$fonts-decorative: 'oswald', Helvetica, sans-serif;
+$fonts-general: 'Helvetica Neue', Helvetica, Arial, sans-serif;
