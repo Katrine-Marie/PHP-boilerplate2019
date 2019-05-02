@@ -100,4 +100,4 @@ Remember to edit the `<head>` section in the file `/app/views/inc/header.php`. H
 
 You may want to edit the manifest-file found in `/public/manifest.json` if you want your site to be a PWA.
 
-It contains default colors, names and icon sources that should be changed to reflect your own (icons should/could be located in `/public/images/icons`).
+From the outset, this file contains default colors, names and icon sources that should be changed to reflect your own. Icons should/could be located in `/public/images/icons`, which currently contains placeholder icons in the sizes specified by the manifest file.
