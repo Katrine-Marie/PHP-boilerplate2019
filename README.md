@@ -93,3 +93,9 @@ You use the `gulp watch` command, in order to automatically run the above mentio
 You use the `gulp imagemin` command in order to minify image files placed in the `/public/images` directory.
 
 NOTE: This setup still uses Gulp 3.9.1 - update to version 4 pending.
+
+## Miscellaneous
+
+You may want to edit the manifest-file found in `/public/manifest.json` if you want your site to be a PWA.
+
+It contains default colors, names and icon sources that should be changed to reflect your own (icons should/could be located in `/public/images/icons`).
