@@ -96,6 +96,8 @@ NOTE: This setup still uses Gulp 3.9.1 - update to version 4 pending.
 
 ## Miscellaneous
 
+Remember to edit the `<head>` section in the file `/app/views/inc/header.php`. Here, you'll want to set icons, SEO meta tags and social media meta tags to their proper values.
+
 You may want to edit the manifest-file found in `/public/manifest.json` if you want your site to be a PWA.
 
 It contains default colors, names and icon sources that should be changed to reflect your own (icons should/could be located in `/public/images/icons`).
